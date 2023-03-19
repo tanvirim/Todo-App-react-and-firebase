@@ -11,12 +11,9 @@ import dayjs from 'dayjs';
 
 const AddnewTodo = () => {
   const [text, settext] = useState('');
-  const [ShowModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [day, setday] = useState(null);
   const [time, settime] = useState();
-
-  console.log('ShowModal state:', ShowModal);
-  console.log('day state:', day);
 
   return (
     <div className='AddNewTodo'>
@@ -29,7 +26,7 @@ const AddnewTodo = () => {
         + New Todo
       </button>
 
-      <Modal ShowModal={ShowModal} setShowModal={setShowModal}>
+      <Modal showModal={showModal} setShowModal={setShowModal}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <form action=''>
             <div className='text'>
@@ -58,7 +55,6 @@ const AddnewTodo = () => {
                 value={day}
                 onChange={day => {
                   setday(day);
-                  console.log('setday=' + day);
                 }}
               />
             </div>

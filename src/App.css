@@ -254,6 +254,11 @@
     gap: 10px;
 }
 
+.Calendar .header .title p {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
 .Calendar .items .item {
     margin-top: 10px;
     font-size: 1rem;
@@ -265,4 +270,154 @@
 .Calendar .items .item:hover {
     color: rgb(29, 129, 117);
     transition: all 300ms ease;
+}
+
+/* Projects */
+
+.projects {
+    border-bottom: 2px solid #ebebeb;
+    padding: 1rem;
+
+}
+
+.projects .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.projects .header .title {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+
+}
+
+.projects .header .title p {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.projects .header .btns {
+    display: flex;
+    gap: 5px;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.project .name {
+
+    cursor: pointer;
+}
+
+.project .name:hover {
+    color: rgb(29, 129, 117);
+    transition: all 300ms ease;
+}
+
+.project .btns .edit-delete {
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+
+}
+
+
+.project .btns .edit-delete .edit :hover {
+    color: rgb(29, 129, 117);
+    transition: all 300ms ease;
+}
+
+.project .btns .edit-delete .delete :hover {
+    background: #eb9797;
+    transition: all 300ms ease;
+    border-radius: 50%;
+}
+
+.project .btns .total-todos {
+    background-color: #e0cece;
+    width: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+
+/* addNewProject */
+
+.AddNewProject .add-button span:hover {
+
+    color: rgb(29, 129, 117);
+    transition: all 300ms ease;
+}
+
+.ProjectForm {
+    background-color: white;
+    padding: 1rem;
+    width: 300px;
+
+    border-radius: 4px;
+
+    position: relative;
+}
+
+.ProjectForm h4 {
+    margin-bottom: 5px;
+}
+
+.ProjectForm input {
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    width: 100%;
+
+}
+
+.ProjectForm input:focus {
+    border-bottom: 1px solid rgb(49, 115, 228);
+}
+
+
+.ProjectForm button {
+    position: absolute;
+    width: 50%;
+    height: 30px;
+    border: none;
+    font-size: 1.1rem;
+    transition: all 300ms ease;
+    cursor: pointer;
+
+}
+
+.ProjectForm .cancel {
+
+    left: 0;
+    bottom: 0;
+    background: #d2d9e0;
+
+}
+
+.ProjectForm .cancel:hover {
+    background: #a0a0a0;
+}
+
+.ProjectForm .confirm {
+
+    right: 0;
+    bottom: 0;
+    background: #3277de;
+
+    color: white;
+}
+
+.ProjectForm .confirm:hover {
+    background: #0753c6;
 }
