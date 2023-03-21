@@ -20,6 +20,7 @@
 }
 
 .Main {
+    position: relative;
     background-image: url(./images/bg.jpg);
     height: 100%;
     width: 100%;
@@ -34,7 +35,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    /* z-index: 9999; */
+    z-index: 99;
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
@@ -42,16 +43,7 @@
 }
 
 .Modal .container {
-    /* position: relative;
-    width: 100%;
-    height: 400px;
-    max-width: 600px;
-    max-height: 80vh;
-    margin: 0 auto;
-    padding: 30px;
-    
-    overflow-y: auto;
-    overflow-x: hidden; */
+
 
     position: relative;
     transform: translate(50% 25%);
@@ -100,6 +92,7 @@
 .AddNewTodo {
     border-bottom: 1px solid #ebebeb;
     padding: .5rem;
+
 }
 
 .AddNewTodo .btn {
@@ -123,14 +116,16 @@
 
 }
 
-.AddNewTodo form {
+.AddNewTodo form,
+.EditTodos form {
     padding: 1rem 1rem calc(1rem + 40px) 1rem;
-    width: 500px;
+    width: 400px;
     background: white;
     border-radius: 4px;
 }
 
-.AddNewTodo form .text input {
+.AddNewTodo form .text input,
+.EditTodos form .text input {
     padding: 1rem;
     width: 100%;
     margin-bottom: .5rem;
@@ -138,32 +133,39 @@
     font-size: 1.2rem;
 }
 
-.AddNewTodo form .text input:focus {
+.AddNewTodo form .text input:focus,
+.EditTodos form .text input:focus {
     outline: none;
     border-bottom: 1px solid blue;
 }
 
-.AddNewTodo form .remind {
+.AddNewTodo form .remind,
+.EditTodos form .remind {
     display: flex;
     align-items: center;
     padding: .5rem;
 }
 
-.AddNewTodo form p {
+.AddNewTodo form p,
+.EditTodos form p {
     margin-left: 10px;
 }
 
-.AddNewTodo form .title {
+.AddNewTodo form .title,
+.EditTodos form .title {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
 
-.AddNewTodo form .pick-day {
+.AddNewTodo form .pick-day,
+.EditTodos form .pick-day {
     padding: 1rem;
+
 }
 
-.AddNewTodo form .pick-day .title {
+.AddNewTodo form .pick-day .title,
+.EditTodos form .pick-day .title {
     display: flex;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -174,23 +176,27 @@
     padding: 1rem;
 }
 
-.AddNewTodo form .pick-time .title {
+.AddNewTodo form .pick-time .title,
+.EditTodos form .pick-time .title {
     display: flex;
     margin-left: 10px;
     margin-bottom: 10px;
 }
 
-.AddNewTodo form .project .title {
+.AddNewTodo form .project .title,
+.EditTodos form .project .title {
     padding: .5rem;
 }
 
-.AddNewTodo form .projects {
+.AddNewTodo form .projects,
+.EditTodos form .projects {
     display: flex;
     flex-wrap: wrap;
 
 }
 
-.AddNewTodo form .projects .project {
+.AddNewTodo form .projects .project,
+.EditTodos form .projects .project {
     padding: .5rem;
     border: 1px solid rgb(53, 135, 230);
     border-radius: 4px;
@@ -198,13 +204,15 @@
     cursor: pointer;
 }
 
-.AddNewTodo form .projects .active {
+.AddNewTodo form .projects .active,
+.EditTodos form .projects .active {
     background-color: rgba(21, 107, 255, 0.76);
     color: white;
 
 }
 
-.AddNewTodo form .projects .active:hover {
+.AddNewTodo form .projects .active:hover,
+.EditTodos form .projects .active:hover {
     background-color: rgba(18, 75, 174, 0.76);
     color: white;
     transition: all 300ms ease;
@@ -420,4 +428,96 @@
 
 .ProjectForm .confirm:hover {
     background: #0753c6;
+}
+
+
+/* Todos */
+.Todos {
+    position: absolute;
+    background-color: white;
+    width: 400px;
+    height: 80%;
+    bottom: 40px;
+    left: 40px;
+    padding: 1rem;
+    opacity: .9;
+    border-radius: 5px;
+}
+
+.Todos .selected-project {
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #ebebeb;
+}
+
+.Todos .todos {
+    overflow-y: auto;
+}
+
+/*Todo*/
+
+.Todo .todo-container {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10px;
+
+    gap: 10px;
+}
+
+.Todo .todo-container span {
+    cursor: pointer;
+}
+
+.Todo .todo-container .text {
+    flex: 1;
+    cursor: pointer;
+}
+
+.Todo .todo-container .text .time {
+    font-size: .8rem;
+    color: grey;
+
+
+}
+
+.Todo .todo-container .next-day-trash {
+    display: flex;
+    gap: 5px;
+}
+
+
+.Todo .todo-container .text {
+    position: relative;
+}
+
+.Todo .todo-container .text .line {}
+
+.Todo .todo-container .text .line-through {
+    position: absolute;
+    bottom: 75%;
+    height: 1px;
+    padding-right: 100%;
+
+    width: 0;
+    background-color: gray;
+}
+
+.EditTodos {
+    position: absolute;
+    bottom: 40px;
+    left: calc(40px + 400px + 40px);
+    background: white;
+    width: 400px;
+    height: 80%;
+    opacity: .9;
+    border-radius: 5px;
+
+}
+
+.EditTodos .header {
+    margin: 10px;
+    text-transform: capitalize;
 }

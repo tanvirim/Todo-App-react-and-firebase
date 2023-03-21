@@ -18,7 +18,7 @@ const ProjectForm = ({
       />
 
       <button className='cancel' onClick={() => setShowModal(false)}>
-        cancel
+        Cancel
       </button>
 
       <button type='submit' className='confirm'>
